@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Web3 Site Parser",
+  "version": "1.0.0",
+  "description": "Extracts and displays website-specific data",
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "host_permissions": [
+    "https://app.safe.global/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.safe.global/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 

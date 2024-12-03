@@ -1,0 +1,88 @@
+.App {
+  width: 300px;
+  padding: 16px;
+}
+
+.network-info {
+  margin: 8px 0;
+}
+
+.parse-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.parse-button:hover {
+  background-color: #45a049;
+}
+
+.safehashes {
+  margin-top: 16px;
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.calculate-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.calculate-button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #ffebee;
+  border-radius: 4px;
+}
+
+.hash-results {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.hash-results div {
+  margin: 4px 0;
+  word-break: break-all;
+  /* font-family: monospace; */
+}
+
+.parse-button.loading {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.loading-indicator {
+  display: inline-block;
+  margin-left: 8px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
