@@ -2,6 +2,7 @@ import { WebsiteParser, ParsedData } from '../types';
 import { ethers } from 'ethers';
 
 export class ENSResolver implements WebsiteParser {
+  name = "ENSResolver";
   hostname = '*'; // Match all sites
   private provider: ethers.JsonRpcProvider;
   private ensCache: Map<string, string> = new Map();

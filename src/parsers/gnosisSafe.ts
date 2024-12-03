@@ -8,7 +8,8 @@ const gnosisSafeConfig: WebsiteConfig = {
 };
 
 export class GnosisSafeParser implements WebsiteParser {
-  hostname = 'https://app.safe.global/transactions/queue?safe=';
+  name = "GnosisSafeParser";
+  hostname = 'app.safe.global';
 
   canParse(url: string): boolean {
     return url.includes(this.hostname);

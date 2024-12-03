@@ -7,7 +7,7 @@ interface Props {
   isLoading: boolean;
 }
 
-export const SafeHashes: React.FC<Props> = ({ networkInfo, isLoading }) => {
+export const GnosisSafeHashes: React.FC<Props> = ({ networkInfo, isLoading }) => {
   const [hashes, setHashes] = React.useState<{ domainHash: string; messageHash: string; safeTxHash: string; } | null>(null);
   const [error, setError] = React.useState<string | null>(null);
 

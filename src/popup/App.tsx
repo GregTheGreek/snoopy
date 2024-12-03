@@ -1,6 +1,7 @@
 import React from 'react';
 import { NetworkInfo } from '../components/NetworkInfo';
-import { SafeHashes } from '../components/SafeHashes';
+import { GnosisSafeHashes } from '../components/GnosisSafeHashes';
+import { ParserSettings } from '../components/ParserSettings';
 
 const App: React.FC = () => {
   const [networkInfo, setNetworkInfo] = React.useState({
@@ -51,13 +52,17 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <button 
-        className={`parse-button ${parsingStatus === 'loading' ? 'loading' : ''}`}
-        onClick={handleParse}
-        disabled={parsingStatus === 'loading'}
-      >
-        {parsingStatus === 'loading' ? 'Parsing...' : 'Parse'}
-      </button>
+      <div className="header-row">
+        <button 
+          className={`parse-button ${parsingStatus === 'loading' ? 'loading' : ''}`}
+          onClick={handleParse}
+          disabled={parsingStatus === 'loading'}
+        >
+          {parsingStatus === 'loading' ? 'Parsing...' : 'Parse'}
+        </button>
+        
+        <ParserSettings />
+      </div>
       
       {parsingError && (
         <div className="error-message">
@@ -65,13 +70,13 @@ const App: React.FC = () => {
         </div>
       )}
       
-      {networkInfo && (
+      {networkInfo?.networkName && (
         <>
           <NetworkInfo 
             networkInfo={networkInfo} 
             isLoading={parsingStatus === 'loading'} 
           />
-          <SafeHashes 
+          <GnosisSafeHashes 
             networkInfo={networkInfo}
             isLoading={parsingStatus === 'loading'}
           />

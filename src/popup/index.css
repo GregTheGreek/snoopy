@@ -85,4 +85,44 @@
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-} 
+}
+
+.parser-settings {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.parser-settings h3 {
+  margin: 0 0 8px 0;
+}
+
+.parser-toggle {
+  margin: 4px 0;
+}
+
+.parser-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.parser-toggle input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.parse-button {
+  height: fit-content;
+  min-width: 100px;
+  margin: 0;
+}
+  

@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 // Define common types used across the extension
 export interface WebsiteParser {
+  name: string;
   hostname: string;
   parse: (url: Location) => Promise<ParsedData>;
   canParse: (url: string) => boolean;

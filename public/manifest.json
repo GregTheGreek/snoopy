@@ -3,7 +3,7 @@
   "name": "Web3 Site Parser",
   "version": "1.0.0",
   "description": "Extracts and displays website-specific data",
-  "permissions": ["activeTab", "tabs", "scripting"],
+  "permissions": ["activeTab", "tabs", "scripting", "storage"],
   "host_permissions": [
     "https://app.safe.global/*",
     "<all_urls>"
