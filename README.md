@@ -1,6 +1,6 @@
-# Snoopy - Ethreum Readability Tool
+# Snoopy - Ethereum Readability Tool
 
-A Chrome extension that enhances readability and verification of Web3 transactions. While initially focused on Safe transactions, it will eventually support other applications.
+A Chrome extension that enhances readability and verification of Web3 transactions. While initially focused on Safe transactions, it now includes ENS resolution and configurable parser settings.
 
 ## Credits
 
@@ -8,16 +8,25 @@ The Safe transaction hash calculation features were heavily inspired by [@pcaver
 
 ## Features
 
+### 1. Safe Transaction Parser
 - Calculate and verify transaction hashes
 - Support for multiple networks and protocols
 - Real-time updates as transaction details change
+- Extracts transaction details from Safe UI
+- Calculates Domain Hash, Message Hash, and Safe Transaction Hash
+- Helps hardware wallet users verify signing data
+- Supports multiple networks (Ethereum, Polygon, etc.)
 
-### Current Implementations
-- Safe Transaction Parser:
-  - Extracts transaction details from Safe UI
-  - Calculates Domain Hash, Message Hash, and Safe Transaction Hash
-  - Helps hardware wallet users verify signing data
-  - Supports multiple networks (Ethereum, Polygon, etc.)
+### 2. ENS Resolution
+- Automatically detects Ethereum addresses across any webpage
+- Resolves and replaces addresses with their corresponding ENS names
+- Shows original address in tooltip on hover
+- Visual highlighting of replaced addresses
+
+### 3. Parser Settings
+- Toggle individual parsers on/off
+- Settings persist across browser sessions
+- Real-time parser enabling/disabling
 
 ## Local Installation
 
@@ -56,6 +65,20 @@ The Safe transaction hash calculation features were heavily inspired by [@pcaver
    - Domain Hash
    - Message Hash
    - Safe Tx Hash
+
+### ENS Resolution
+1. Visit any webpage containing Ethereum addresses
+2. The extension will automatically:
+   - Detect Ethereum addresses
+   - Replace them with ENS names (if available)
+   - Show the original address in a tooltip on hover
+
+### Parser Settings
+1. Click the extension icon in your Chrome toolbar
+2. Use the checkboxes to enable/disable specific parsers:
+   - GnosisSafeParser: For Safe transaction parsing
+   - ENSResolver: For ENS name resolution
+3. Changes take effect immediately
 
 ## Development
 
@@ -99,7 +122,9 @@ If the extension isn't working:
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under [GNU AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html).
+
+Some components, particularly the Safe transaction hash calculation features, are derived from [safe-tx-hashes-util](https://github.com/pcaversaccio/safe-tx-hashes-util).
 
 ## Security
 

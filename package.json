@@ -2,6 +2,7 @@
   "name": "web3-site-parser-extension",
   "version": "1.0.0",
   "description": "Chrome extension for parsing web3 site data",
+  "license": "AGPL-3.0-only",
   "scripts": {
     "start": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",

@@ -1,5 +1,7 @@
 // @license GNU Affero General Public License v3.0 only
-// @author Original: pcaversaccio (Bash)
+// This file contains code derived from safe-tx-hashes-util
+// Original: https://github.com/pcaversaccio/safe-tx-hashes-util
+// Original Author: pcaversaccio (Bash)
 
 import { ethers } from 'ethers';
 
