@@ -5,14 +5,19 @@
   "description": "Extracts and displays website-specific data",
   "permissions": ["activeTab", "tabs", "scripting"],
   "host_permissions": [
-    "https://app.safe.global/*"
+    "https://app.safe.global/*",
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://app.safe.global/*"],
+      "matches": [
+        "https://app.safe.global/*",
+        "<all_urls>"
+      ],
+      "css": ["contentScript.css"],
       "js": ["contentScript.js"]
     }
   ],

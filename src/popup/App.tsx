@@ -65,14 +65,18 @@ const App: React.FC = () => {
         </div>
       )}
       
-      <NetworkInfo 
-        networkInfo={networkInfo} 
-        isLoading={parsingStatus === 'loading'} 
-      />
-      <SafeHashes 
-        networkInfo={networkInfo}
-        isLoading={parsingStatus === 'loading'}
-      />
+      {networkInfo && (
+        <>
+          <NetworkInfo 
+            networkInfo={networkInfo} 
+            isLoading={parsingStatus === 'loading'} 
+          />
+          <SafeHashes 
+            networkInfo={networkInfo}
+            isLoading={parsingStatus === 'loading'}
+          />
+        </>
+      )}
     </div>
   );
 };

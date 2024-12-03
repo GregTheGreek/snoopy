@@ -10,6 +10,10 @@ const gnosisSafeConfig: WebsiteConfig = {
 export class GnosisSafeParser implements WebsiteParser {
   hostname = 'https://app.safe.global/transactions/queue?safe=';
 
+  canParse(url: string): boolean {
+    return url.includes(this.hostname);
+  }
+
   async parse(url: Location): Promise<ParsedData> {
     try {
       let retryCount = 0;

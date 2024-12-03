@@ -47,3 +47,23 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // Return true to indicate we want to send a response asynchronously
   return true;
 }); 
+
+// Add immediate parsing attempt when script loads
+console.log('[ContentScript] Script loaded, attempting initial parse');
+const parser = ParserRegistry.getParser(window.location.href);
+if (parser) {
+  console.log('[ContentScript] Parser found, starting parse');
+  parser.parse(window.location)
+    .then(data => {
+      console.log('[ContentScript] Parse completed:', data);
+      chrome.runtime.sendMessage({
+        type: 'PARSED_DATA',
+        data: data
+      });
+    })
+    .catch(error => {
+      console.error('[ContentScript] Parse error:', error);
+    });
+} else {
+  console.log('[ContentScript] No parser found for current URL');
+} 

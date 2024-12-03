@@ -33,6 +33,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'public' },
+        { from: "src/contentScript.css", to: "contentScript.css" }
       ],
     }),
     new HtmlWebpackPlugin({

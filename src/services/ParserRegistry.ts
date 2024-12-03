@@ -1,12 +1,15 @@
-import { WebsiteParser } from '../types';
 import { GnosisSafeParser } from '../parsers/gnosisSafe';
+import { ENSResolver } from '../parsers/ensResolver';
+import { WebsiteParser } from '../types';
 
 export class ParserRegistry {
-  private static parsers: WebsiteParser[] = [new GnosisSafeParser()];
+  private static parsers: WebsiteParser[] = [
+    new GnosisSafeParser(),
+    new ENSResolver()
+  ];
 
-  static getParser(hostname: string): WebsiteParser | null {
-    return (
-      this.parsers.find((parser) => hostname.includes(parser.hostname)) || null
-    );
+  // must be href
+  static getParser(url: string): WebsiteParser | null {
+    return this.parsers.find(parser => parser.canParse(url)) || null;
   }
 } 

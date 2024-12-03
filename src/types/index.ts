@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 export interface WebsiteParser {
   hostname: string;
   parse: (url: Location) => Promise<ParsedData>;
+  canParse: (url: string) => boolean;
 }
 
 export interface ParsedData {
